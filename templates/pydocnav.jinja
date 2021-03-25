@@ -1,0 +1,41 @@
+<!doctype html>
+<title>Docnavigator</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class="overlay">
+    <h2>Docnavigator: {{ module_header }}</h2>
+    <table style="width:100vw;height:90vh;position:fixed">
+        <tr>
+            <td style="width:20vw">
+                <div>
+                    <form method="POST" action="/response">
+                    <p>Module</p><input type="text" name="f_module_name" value="{{module_name}}" required><br>
+                </div>
+                <div>
+                    <p>Parent Module</p>
+                    <textarea style="width:20vw">{{ parent_module_name }}</textarea>
+                </div>
+                <div>
+                    <p>Child Modules</p>
+                    <textarea style="width:20vw;height:85vh">{{ child_modules }}</textarea>
+                </div>
+            </td>
+            <td style="width:39vw">
+                <div>
+                    <p>Documentation</p>
+                    <textarea style="width:39vw;height:20vh">{{ documentation }}</textarea>
+                </div>
+                <div>
+                    <p>Help</p>
+                    <textarea style="width:39vw;height:71vh">{{ help_str }}</textarea>
+                </div>
+            </td>
+            <td style="width:39vw">
+                <div>
+                    <p>Source Code</p>
+                    <textarea style="width:39vw;height:94vh">{{ source_code }}</textarea>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
